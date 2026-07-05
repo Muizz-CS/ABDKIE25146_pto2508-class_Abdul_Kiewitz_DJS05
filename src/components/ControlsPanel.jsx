@@ -55,9 +55,10 @@ export const ControlsPanel = ({
           onChange={(e) => onSortChange(e.target.value)}
           style={{ width: '100%', padding: '0.6rem 0.75rem', borderRadius: '4px', border: '1px solid #cbd5e1', background: '#fff', boxSizing: 'border-box' }}
         >
-          <option value="A-Z">Title (A - Z)</option>
-          <option value="Z-A">Title (Z - A)</option>
-          <option value="NEWEST">Newest Released First</option>
+          <option value="a-z">A-Z</option>
+          <option value="z-a">Z-A</option>
+          <option value="newest">Newest Updated</option>
+          <option value="oldest">Oldest Updated</option>
         </select>
       </div>
     </section>

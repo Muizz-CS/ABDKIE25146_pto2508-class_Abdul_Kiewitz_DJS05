@@ -23,6 +23,9 @@ export const Home = () => {
     setCurrentPage,
   } = usePodcast();
 
+  // Guard rails to protect against empty array definitions during loading states
+  const displays = paginatedPodcasts || [];
+
   return (
     <div>
       <ControlsPanel 
@@ -38,16 +41,16 @@ export const Home = () => {
       {loading && <LoadingState />}
       {error && <ErrorState message={error} />}
       
-      {!loading && !error && paginatedPodcasts.length === 0 && (
+      {!loading && !error && displays.length === 0 && (
         <div style={{ textAlign: 'center', padding: '3rem 2rem' }}>
           <p style={{ color: '#64748b', fontSize: '1.1rem' }}>No podcasts match your filters.</p>
         </div>
       )}
 
-      {!loading && !error && paginatedPodcasts.length > 0 && (
+      {!loading && !error && displays.length > 0 && (
         <>
           <section id="podcast-grid" className="grid-container">
-            {paginatedPodcasts.map((podcast) => (
+            {displays.map((podcast) => (
               <PodcastCard key={podcast.id} podcast={podcast} />
             ))}
           </section>

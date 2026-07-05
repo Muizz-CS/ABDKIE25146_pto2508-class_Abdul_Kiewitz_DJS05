@@ -1,13 +1,14 @@
 import { createContext, useContext } from 'react';
 
 /**
- * Global context instance for sharing podcast states.
+ * Global context for storing podcast listing states.
  */
 export const PodcastContext = createContext(null);
 
 /**
- * Custom hook to safely consume the global podcast context framework.
- * @returns {Object} Global podcast states and filter functions.
+ * Custom hook to consume the Podcast context safely.
+ * @returns {Object} Context state values and setters.
+ * @throws {Error} If used outside of a PodcastProvider.
  */
 export const usePodcast = () => {
   const context = useContext(PodcastContext);

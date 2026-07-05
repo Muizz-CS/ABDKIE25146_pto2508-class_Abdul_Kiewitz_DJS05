@@ -67,6 +67,11 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
+.podcast-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .podcast-card {
   background: var(--white);
   border-radius: 8px;
