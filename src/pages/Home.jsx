@@ -1,5 +1,5 @@
 import 'react';
-import { usePodcast } from '../context/usePodcast';
+import { usePodcast } from '../context/PodcastContext';
 import PodcastCard from '../components/PodcastCard';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
